@@ -22,8 +22,8 @@ class Room():
 		self.height = height
 		
 		# Fill the room with coordinates that have no item
-		for i in range(width):
-			for j in range(height):
+		for i in range(height):
+			for j in range(width):
 				self.coord_dict[(i, j)] = Coord((i, j))
 
 		# Make a single sample box at 1 down, 5 right
