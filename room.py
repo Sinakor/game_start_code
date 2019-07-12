@@ -1,4 +1,5 @@
 import item
+
 class Coord():
 	def __init__(self, in_coord, item=None):
 		self.coord = in_coord
@@ -29,3 +30,7 @@ class Room():
 		single_box = item.Item('box', '☐')
 		self.coord_dict[(1, 5)].place(single_box)
 	
+	def __repr__(self):
+	
+		# FIX THIS REPR
+		return ('map '*10 + '\n') * 10

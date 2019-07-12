@@ -8,7 +8,7 @@ def print_room(in_room, input_player):
 	my_screen.addstr(input_player.location[0], input_player.location[1] * 2, repr(input_player))
 
 hero_player = character.Player()
-main_room = room.Room([hero_player])
+main_room = room.Room([hero_player], 10, 10)
 
 my_screen.keypad(True)
 
