@@ -4,7 +4,7 @@ my_screen = curses.initscr()
 
 def print_room(in_room, input_player):
 	for (i, j) in in_room.coord_dict:
-		my_screen.addstr(i, j*2, repr(in_room.coord_dict[(i, j)].z0))
+		my_screen.addstr(i, j*2, repr(in_room.coord_dict[(i, j)].has))
 	my_screen.addstr(input_player.location[0], input_player.location[1] * 2, repr(input_player))
 
 hero_player = character.Player()
