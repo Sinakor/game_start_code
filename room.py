@@ -14,13 +14,15 @@ class Coord():
 		self.has = in_item
 
 class Room():
-	def __init__(self, characters):
+	def __init__(self, characters, width, height):
 		self.characters = characters
 		self.coord_dict = {}
+		self.width = width
+		self.height = height
 		
 		# Fill the room with coordinates that have no item
-		for i in range(10):
-			for j in range(10):
+		for i in range(width):
+			for j in range(height):
 				self.coord_dict[(i, j)] = Coord((i, j))
 
 		# Make a single sample box at 1 down, 5 right
