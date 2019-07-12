@@ -16,6 +16,7 @@ game_over = False
 while game_over == False:
 	my_screen.clear()
 	print_room(main_room, hero_player)
+	my_screen.addstr(14, 0, 'Push \'up\' or \'q\'')
 	my_screen.addstr(15, 0, main_room.coord_dict[hero_player.location].announce()) # print what is at the player's location
 	inkey = my_screen.getkey()
 	if inkey == 'KEY_UP':
