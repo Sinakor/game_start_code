@@ -5,10 +5,10 @@ class Coord():
 		self.coord = in_coord
 		self.has = item
 
-	def __repr__(self):
+	def __str__(self):
 		return str(self.coord)
 
-	def announce(self):
+	def __repr__(self):
 		return str(self.has)
 
 	def place(self, in_item):
@@ -33,4 +33,4 @@ class Room():
 	def __repr__(self):
 	
 		# FIX THIS REPR
-		return ('map '*10 + '\n') * 10
+		return ('map '*10 + '\n') * 10 + ''.join([str(character.location) + '\n' for character in self.characters])
