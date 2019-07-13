@@ -1,1 +1,1 @@
-# Possible code to start a game project
+# Code to start a game project
