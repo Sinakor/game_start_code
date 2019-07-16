@@ -1,5 +1,6 @@
 import item
 
+
 class Coord():
     def __init__(self, in_coord, item=None):
         self.coord = in_coord
@@ -17,13 +18,14 @@ class Coord():
     def place(self, in_item):
         self.has = in_item
 
+
 class Room():
     def __init__(self, characters, width, height):
         self.characters = characters
         self.coord_dict = {}
         self.width = width
         self.height = height
-        
+
         # Fill the room with coordinates that have no item
         for i in range(height):
             for j in range(width):

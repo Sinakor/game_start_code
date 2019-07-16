@@ -1,7 +1,7 @@
 import room, item, character
 
 hero_player = character.Player()
-main_room = room.Room([hero_player], 10, 10)
+main_room = room.Room([hero_player], 50, 50)
 
 keep_playing = True
 while keep_playing:
@@ -13,9 +13,3 @@ while keep_playing:
 		hero_player.location = new_loc
 	elif inkey[0] in ['q', 'Q']:
 		keep_playing = False
-
-
-
-
-
- 
