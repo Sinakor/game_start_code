@@ -35,17 +35,13 @@ class Room():
         # Make a single sample box at 1 down, 5 right
         single_box = item.Item('box', '☐') 
         self.coord_dict[(1, 5)].place(single_box)
-        
 
-
+    def update(self):
         # ply = character.Player() 
         # self.coord_dict
-        for player in characters:
+        for player in self.characters:
             self.coord_dict[(player.location)].place(player)
-            
-                
 
-    
     def __repr__(self):
 
         border = []
