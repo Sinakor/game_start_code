@@ -7,15 +7,17 @@ keep_playing = True
 while keep_playing:
 	print(repr(main_room))
 	# print(main_room.coord_dict)
-	inkey = input("Next command: ")
+	inkey = input("Next command: ").strip().lower()
 	if inkey[0] in ['w', 'west', 'l', 'left']:
 		new_loc = (hero_player.location[0] - 1, hero_player.location[1])
 		hero_player.location = new_loc
 		print(repr(new_loc))
+
 	elif inkey[0] in ['e', 'east', 'r', 'right']:
 		new_loc = (hero_player.location[0] + 1, hero_player.location[1])
 		hero_player.location = new_loc
 		print(new_loc)
+
 	elif inkey[0] in ['n', 'north','up','u']:
 		new_loc = (hero_player.location[0], hero_player.location[1] + 1)
 		hero_player.location = new_loc
@@ -25,6 +27,9 @@ while keep_playing:
 		new_loc = (hero_player.location[0], hero_player.location[1] - 1)
 		hero_player.location = new_loc
 		print(new_loc)
+
+    elif inkey[0] in ['x', 'exit', 'done', 'd', 'q', 'quit']:
+        break
 	#print(repr(main_room))
 # #keep_playing = False
 #testing branch
