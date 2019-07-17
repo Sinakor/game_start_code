@@ -1,4 +1,4 @@
-import item
+import item, character
 
 
 class Coord():
@@ -10,7 +10,8 @@ class Coord():
         if self.has == None:
             return ' '
         else:
-            return 'X' #####Make better much better
+            return repr(self.has)#####Make better much better
+
 
     def __repr__(self):
         return str(self.has)
@@ -32,13 +33,23 @@ class Room():
                 self.coord_dict[(i, j)] = Coord((i, j))
 
         # Make a single sample box at 1 down, 5 right
-        single_box = item.Item('box', '☐')
+        single_box = item.Item('box', '☐') 
         self.coord_dict[(1, 5)].place(single_box)
+        
+
+
+        # ply = character.Player() 
+        # self.coord_dict
+        for player in characters:
+            self.coord_dict[(player.location)].place(player)
+            
+                
+
     
     def __repr__(self):
 
         border = []
-        border.append('* '* (self.width+ 2))
+        border.append('* '* (self.width + 2))
     
         for i in range(self.height):
             row = ['*']
@@ -54,22 +65,21 @@ class Room():
         
         return ('\n'.join(border))
 
-        # for y_coord in range(self.height): 
-        #     # print('*')
-        #     for x_coord in range(self.width):
-        #         if [x_coord, y_coord] in border:
-        #             print('*', end='')
-        #         else:
-        #             print('', end='')
-        # print()
-        # print('*')
-        # print('* '*self.width)
-        # return str(border)   
+        # # for y_coord in range(self.height): 
+        # #     # print('*')
+        # #     for x_coord in range(self.width):
+        # #         if [x_coord, y_coord] in border:
+        # #             print('*', end='')
+        # #         else:
+        # #             print('', end='')
+        # # print()
+        # # print('*')
+        # # print('* '*self.width)
+        # # return str(border)   
     
         # FIX THIS REPR
-        # return (' '*10 + '\n') * 10 + ''.join([str(character.location) + '\n' for character in self.characters])
+        # return (' MAP '*10 + '\n') * 10 + ''.join([str(character.location) + '\n' for character in self.characters])
 
 
 if __name__ == '__main__':
-    game = Room()
-    print(game)
+    pass
