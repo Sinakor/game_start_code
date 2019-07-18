@@ -11,6 +11,9 @@ class Character:
 		return self.uni
 
 class Player(Character):
-	def __init__(self):
+	def __init__(self, loot=None):
 		super().__init__('Hero', (9, 5), '👵')
-		
+		if loot == None:
+			self.loot = []
+		else:
+			self.loot = loot 
