@@ -33,6 +33,7 @@ class Room():
                 self.coord_dict[(i, j)] = Coord((i, j))
 
         # Make a single sample box at 1 down, 5 right
+
         # single_box = item.Item('box', '☐') 
         key = item.Item('key', '🗝')
         treasure = item.Item('treasure', '💰')
@@ -42,6 +43,9 @@ class Room():
         self.coord_dict[(7, 2)].place(key)
         self.coord_dict[(1, 1)].place(sword)
         self.coord_dict[(4, 9)].place(treasure)
+
+        single_box = item.Item('box', '☐') 
+        self.coord_dict[(1, 5)].place(single_box)
         self.update()
 
     def update(self):
