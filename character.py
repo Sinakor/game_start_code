@@ -17,3 +17,9 @@ class Player(Character):
 			self.loot = []
 		else:
 			self.loot = loot 
+
+	def __contains__(self, name):
+		for item in self.loot:
+			if item.name == name:
+				return True
+		return False
