@@ -6,7 +6,7 @@ main_room = room.Room([hero_player], 10, 10)
 keep_playing = True
 while keep_playing:
 	print(repr(main_room))
-	print(main_room.coord_dict)
+	# print(main_room.coord_dict)
 	
 	main_room.coord_dict[hero_player.location].place(None)
 
@@ -23,7 +23,6 @@ while keep_playing:
 	elif inkey[0] in ['w', 'west', 'l', 'left']:
 		new_loc = (hero_player.location[0], hero_player.location[1] - 1)
 
-	# if main_room.coord_dict[hero_player.location] == main_room.coord_dict[].has()
 
 	i, j = new_loc
 	if i in range(0, main_room.height) and j in range(0, main_room.width):
@@ -33,8 +32,14 @@ while keep_playing:
 		print('Ouch!')
 
 	print(main_room.coord_dict[hero_player.location].has)
+
 	if main_room.coord_dict[hero_player.location].has:
 		hero_player.loot.append(main_room.coord_dict[hero_player.location].has)
+
+	### Check to see if in item in loot list: Exampe if hero has sword while fighting enemy
+	if 'sword' in hero_player:
+		print('My name is inigo montoya')
+	
 	print(hero_player.loot)
 	main_room.update()
 #print(repr(main_room))
