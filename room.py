@@ -10,7 +10,7 @@ class Coord():
         if self.has == None:
             return ' '
         else:
-            return repr(self.has)#####Make better much better
+            return repr(self.has)
 
 
     def __repr__(self):
@@ -33,14 +33,23 @@ class Room():
                 self.coord_dict[(i, j)] = Coord((i, j))
 
         # Make a single sample box at 1 down, 5 right
-        single_box = item.Item('box', '☐') 
-        self.coord_dict[(1, 5)].place(single_box)
+        # single_box = item.Item('box', '☐') 
+        key = item.Item('key', '🗝')
+        treasure = item.Item('treasure', '💰')
+        sword = item.Item('sword', '🗡')
+        
+        # self.coord_dict[(1, 5)].place(single_box)
+        self.coord_dict[(7, 2)].place(key)
+        self.coord_dict[(1, 1)].place(sword)
+        self.coord_dict[(4, 9)].place(treasure)
+        self.update()
 
     def update(self):
         # ply = character.Player() 
         # self.coord_dict
         for player in self.characters:
             self.coord_dict[(player.location)].place(player)
+
 
     def __repr__(self):
 
@@ -61,16 +70,15 @@ class Room():
         
         return ('\n'.join(border))
 
-        # # for y_coord in range(self.height): 
-        # #     # print('*')
-        # #     for x_coord in range(self.width):
-        # #         if [x_coord, y_coord] in border:
-        # #             print('*', end='')
-        # #         else:
-        # #             print('', end='')
-        # # print()
-        # # print('*')
-        # # print('* '*self.width)
+        # star_list = []
+        # for y_coord in range(self.height): 
+        #     # print('*')
+        #     for x_coord in range(self.width):
+        #         if [x_coord, y_coord] in star_list:
+        #             print('*', end='')
+        #         else:
+        #             print('', end='')
+        # # # print()
         # # return str(border)   
     
         # FIX THIS REPR
